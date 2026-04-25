@@ -1,0 +1,245 @@
+/* frontend/app/globals.css */
+/* Modern Minimalist Design System */
+
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ */
+/* Design tokens - Warm Contemporary Palette                          */
+/* ------------------------------------------------------------------ */
+:root {
+  /* Surface palette - Light, warm backgrounds */
+  --background:              #fafaf8;
+  --surface:                 #fafaf8;
+  --surface-dim:             #f0ede8;
+  --surface-bright:          #ffffff;
+  --surface-container-lowest: #ede9e4;
+  --surface-container-low:   #f5f2ed;
+  --surface-container:       #fafaf8;
+  --surface-container-high:  #ffffff;
+  --surface-container-highest: #ffffff;
+
+  /* On-surface - Dark text */
+  --on-surface:              #1a1714;
+  --on-surface-variant:      #4a4641;
+
+  /* Primary (Coral accent) */
+  --primary:                 #ff6b5b;
+  --primary-container:       #ff8b7f;
+  --on-primary:              #ffffff;
+  --on-primary-container:    #ffffff;
+
+  /* Secondary (Teal) */
+  --secondary:               #00897b;
+  --secondary-container:     #4db8a8;
+  --on-secondary:            #ffffff;
+  --on-secondary-container:  #ffffff;
+
+  /* Tertiary (Warm gold) */
+  --tertiary:                #d4a574;
+  --tertiary-container:      #f0d9c8;
+  --on-tertiary:             #4d2e1a;
+  --on-tertiary-container:   #3d2818;
+
+  /* Error */
+  --error:                   #d32f2f;
+  --error-container:         #ffebee;
+  --on-error:                #ffffff;
+
+  /* Outline */
+  --outline:                 #ccc4ba;
+  --outline-variant:         #d9d1c8;
+
+  /* Inverse */
+  --inverse-surface:         #1a1714;
+  --inverse-on-surface:      #f5f2ed;
+  --inverse-primary:         #ffb4a8;
+}
+
+/* ------------------------------------------------------------------ */
+/* Base                                                                 */
+/* ------------------------------------------------------------------ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--on-surface);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+/* ------------------------------------------------------------------ */
+/* Typography                                                           */
+/* ------------------------------------------------------------------ */
+.font-display {
+  font-family: var(--font-manrope), sans-serif;
+  font-weight: 600;
+}
+
+.font-mono {
+  font-family: var(--font-space-grotesk), monospace;
+}
+
+/* ------------------------------------------------------------------ */
+/* Scrollbar - Light theme                                             */
+/* ------------------------------------------------------------------ */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(74, 70, 65, 0.2);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(74, 70, 65, 0.4);
+}
+
+/* ------------------------------------------------------------------ */
+/* Range input styling                                                  */
+/* ------------------------------------------------------------------ */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #ff6b5b 0%, #ff8b7f 100%);
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(255, 107, 91, 0.3);
+  transition: all 0.2s;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(255, 107, 91, 0.4);
+}
+
+input[type="range"] {
+  accent-color: #ff6b5b;
+}
+
+/* ------------------------------------------------------------------ */
+/* Animations                                                           */
+/* ------------------------------------------------------------------ */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.6; }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.5s ease-out both;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out both;
+}
+
+.animate-slide-down {
+  animation: slideDown 0.4s ease-out both;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.4s ease-out both;
+}
+
+/* Stagger children */
+.stagger > *:nth-child(1) { animation-delay: 0.05s; }
+.stagger > *:nth-child(2) { animation-delay: 0.10s; }
+.stagger > *:nth-child(3) { animation-delay: 0.15s; }
+.stagger > *:nth-child(4) { animation-delay: 0.20s; }
+.stagger > *:nth-child(5) { animation-delay: 0.25s; }
+
+/* ------------------------------------------------------------------ */
+/* Utility Classes                                                      */
+/* ------------------------------------------------------------------ */
+
+/* Glassmorphism cards with warm tones */
+.card-glass {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.card-glass-dark {
+  background: rgba(245, 242, 237, 0.4);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(212, 165, 116, 0.2);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #ff6b5b 0%, #ff8b7f 50%, #d4a574 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Shadows - warm tones */
+.shadow-warm {
+  box-shadow: 0 8px 24px rgba(255, 107, 91, 0.12);
+}
+
+.shadow-warm-lg {
+  box-shadow: 0 16px 40px rgba(255, 107, 91, 0.15);
+}
+
+/* Border accents */
+.border-accent {
+  border-color: #ff6b5b;
+}
+
+.border-accent-subtle {
+  border-color: rgba(255, 107, 91, 0.2);
+}
+
