@@ -226,7 +226,7 @@ export default function Home() {
           {history.length === 0 && !loading && !error && (
             <section className="text-center pt-12 pb-8 animate-fade-up">
               <p className="text-xs text-stone-500 font-medium uppercase tracking-widest">
-                Created by Terence Anquandah • 10222200077
+                Created by David Kusi 10022200154 • 10222200077
               </p>
             </section>
           )}
