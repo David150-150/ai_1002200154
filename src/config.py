@@ -1,7 +1,7 @@
 """src/config.py
 
-Name: Terence Anquandah
-Index Number: 10022200077
+Name: David Kusi 10022200154
+Index Number: 10022200154
 
 Central configuration for the manual RAG system.
 
@@ -133,8 +133,8 @@ class AppConfig:
         log_path = logs_dir / "rag_logs.jsonl"
 
         cfg = AppConfig(
-            student_name=_env_str("STUDENT_NAME", "Terence Anquandah"),
-            index_number=_env_str("INDEX_NUMBER", "10022200077"),
+            student_name=_env_str("STUDENT_NAME", "David Kusi 10022200154"),
+            index_number=_env_str("INDEX_NUMBER", "10022200154"),
             project_root=project_root,
             data_dir=data_dir,
             docs_dir=docs_dir,

@@ -1,7 +1,7 @@
 """src/utils.py
 
-Name: Terence Anquandah
-Index Number: 10022200077
+Name: David Kusi 10022200154
+Index Number: 10022200154
 
 Core dataclasses and shared helper utilities.
 """

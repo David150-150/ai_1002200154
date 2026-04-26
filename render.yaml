@@ -25,9 +25,9 @@ services:
 
     envVars:
       - key: STUDENT_NAME
-        value: Terence Anquandah
+        value: David Kusi 10022200154
       - key: INDEX_NUMBER
-        value: "10022200077"
+        value: "10022200154"
       - key: LLM_PROVIDER
         value: vertex
       - key: PROJECT_ID

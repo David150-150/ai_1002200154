@@ -1,7 +1,7 @@
 """src/data_loader.py
 
-Name: Terence Anquandah
-Index Number: 10022200077
+Name: David Kusi 10022200154
+Index Number: 10022200154
 
 Loads the two required sources:
 1) Ghana election results CSV (structured)

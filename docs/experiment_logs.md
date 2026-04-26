@@ -1,7 +1,7 @@
 # Experiment Logs (Manual)
 
-**Name:** Terence Anquandah  
-**Index Number:** 10022200077
+**Name:** David Kusi 10022200154  
+**Index Number:** 10022200154
 
 Use this file to record **manual experiments** for chunking, retrieval, reranking, and prompting.
 

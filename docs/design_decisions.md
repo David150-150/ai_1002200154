@@ -1,7 +1,7 @@
 # Design Decisions (Manual RAG)
 
-**Name:** Terence Anquandah  
-**Index Number:** 10022200077
+**Name:** David Kusi 10022200154  
+**Index Number:** 10022200154
 
 ## Goal
 Build a fully manual RAG chatbot (no LangChain/LlamaIndex) that answers questions grounded in:

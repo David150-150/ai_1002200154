@@ -1,7 +1,7 @@
 # Architecture
 
-Name: Terence Anquandah  
-Index Number: 10022200077
+Name: David Kusi 10022200154  
+Index Number: 10022200154
 
 ## Overview
 This system is a **manual Retrieval-Augmented Generation (RAG)** chatbot implemented without LangChain/LlamaIndex.

@@ -1,7 +1,7 @@
 # 2-Minute Video Script (Walkthrough)
 
-**Name:** Terence Anquandah  
-**Index Number:** 10022200077
+**Name:** David Kusi 10022200154  
+**Index Number:** 10022200154
 
 ## Target Length
 90–120 seconds.
@@ -9,7 +9,7 @@
 ## Script (Time-coded)
 
 **0:00–0:10 (Intro)**
-- “Hi, I’m Terence Anquandah, index 10022200077. This is my manual RAG chatbot for Academic City.”
+- “Hi, I’m David Kusi 10022200154, index 10022200154. This is my manual RAG chatbot for Academic City.”
 - “It uses two sources: Ghana election CSV and the 2025 Budget Statement PDF.”
 
 **0:10–0:35 (Manual pipeline proof)**
