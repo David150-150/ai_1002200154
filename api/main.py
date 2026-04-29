@@ -1,3 +1,5 @@
+
+
 """api/main.py
 
 Name: David Kusi 10022200154
@@ -18,6 +20,7 @@ from __future__ import annotations
 
 import logging
 import os
+import asyncio
 from contextlib import asynccontextmanager
 from typing import Any, Dict
 
@@ -77,15 +80,10 @@ def _build_indexes(strategy: str) -> tuple:
     return chunks, vstore, kstore
 
 
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-    """Load and cache the full RAG pipeline on server startup."""
-    load_dotenv()
-
-    pipeline["ready"] = False
-    pipeline["error"] = None
-
+def run_pipeline_sync():
     try:
+        load_dotenv()
+
         config = AppConfig.from_env()
         docs = load_sources(config)
         docs = clean_documents(docs)
@@ -104,6 +102,15 @@ async def lifespan(app: FastAPI):
     except Exception as exc:
         pipeline["error"] = str(exc)
         pipeline["ready"] = False
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Load and cache the full RAG pipeline on server startup."""
+    pipeline["ready"] = False
+    pipeline["error"] = None
+
+    asyncio.get_event_loop().run_in_executor(None, run_pipeline_sync)
 
     # Inject pipeline state into the router module so handlers can access it.
     rag.pipeline = pipeline
@@ -127,7 +134,7 @@ app = FastAPI(
 # CORS — add your Render frontend URL via ALLOWED_ORIGINS env var.
 # Example: ALLOWED_ORIGINS=https://my-chatbot.onrender.com,https://my-chatbot-2.onrender.com
 # ---------------------------------------------------------------------------
-_default_origins = "http://localhost:3000,http://127.0.0.1:3000"
+_default_origins = "https://acity-rag-ui-d5ra.onrender.com/,http://localhost:3000,http://127.0.0.1:3000"
 _raw_origins = os.getenv("ALLOWED_ORIGINS", _default_origins)
 allow_origins = [o.strip() for o in _raw_origins.split(",") if o.strip()]
 
